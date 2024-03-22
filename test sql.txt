@@ -1,0 +1,13 @@
+ 
+
+categories
+INSERT INTO batteryCategories (batteryCategoryID, batteryCategoryName,dateCreated) VALUES (1, `High Capacity Power Bank`, 02,28,2023) 	
+INSERT INTO batteries (batteryID, batteryCategoryID, batteryCode, batteryName, dateCreated, price, descript, color) VALUES (2, 3, 2, 'Hiluckey Solar Charger 25000mAh',
+'2024-02-28', 46.99, 'Outdoor USB C Portable Power Bank with 4 Solar Panels, 3A Fast Charge External Battery Pack with 3 USB Outputs Compatible with Smartphones, Tablets, etc.', 'Orange')
+High Capacity Power Bank 	
+Slim Portable Charger 	
+Solar Powered Charger*****
+Rapid Charging Power Bank  	
+Wireless Charging Power Bank* 	
+
+***KEEPING TRACK OF NUMBER OF ITEMS FOR EACH CATEGORY THAT HAVE BEEN INSERTED***
