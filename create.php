@@ -1,7 +1,5 @@
 <?php
-
-session_start();
-require('storeDefinition.php');
+require_once('storeDefinition.php');
 
 // Get the row info
 $queryRow = 'SELECT * FROM batteryCategories ORDER BY batteryCategoryID';
@@ -9,6 +7,11 @@ $statement = $db->prepare($queryRow);
 $statement->execute();
 $batteries = $statement->fetchAll();
 $statement->closeCursor();
+
+$queryMaxCode = 'SELECT MAX(batteryCode) AS largest_code FROM batteries;';
+$stmt = $db->query($queryMaxCode);
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+$largestCode = $result['largest_code'];
 ?>
 
 <!DOCTYPE html>
@@ -18,13 +21,14 @@ $statement->closeCursor();
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <title>PowerUp Batteries | Create</title>
     <link rel="stylesheet" href="create.css">
     <link rel="shortcut icon" href="images/batteryStoreLogo.jpg">
 </head>
 <header id="container">
     <img src="images/batteryStoreLogo.jpg" alt="logo" class="logo">
+    <?php include("header.php")?>
 </header>
 
 <body>
@@ -39,7 +43,7 @@ $statement->closeCursor();
             <select name="category_id">
                 <?php foreach ($batteries as $battery) : ?>
                     <option value="<?php echo $battery['batteryCategoryID']; ?>">
-                        <?php echo $category['batteryCategoryName']; ?>
+                        <?php echo $battery['batteryCategoryName']; ?>
                     </option>
                 <?php endforeach; ?>
             </select><br>
@@ -73,8 +77,8 @@ $statement->closeCursor();
                 var price = document.forms["add_product_form"]["price"].value;
 
                 // Check the code field
-                if (code == "" || code.length < 4 || code.length > 10) {
-                    alert("Invalid code input. The code should not be blank and should have a length between 4 and 10 characters.");
+                if (code == "" || code <= <?php echo $largestCode; ?>) {
+                    alert("Invalid code input. The code already taken or entered blank value");
                     return false;
                 }
 

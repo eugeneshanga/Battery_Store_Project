@@ -77,10 +77,11 @@ nav a:hover::before{
 }
 
 #store_description{
-    text-align: center;
+    clear: both;
+    margin-top: 20px;
+    text-align: justify;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14pt;
-    width: auto;
 }
 
 
@@ -112,33 +113,26 @@ nav a:hover::before{
     line-height: 0
 }
 
-#figcap1{
-    position: absolute;
-    top: 55em;
-    right: 93.5em;
-    font-size: 10pt;
-    
+#pics {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+    margin-left: 10%; 
+    margin-right: auto;
 }
 
-#figcap2{
-    position: absolute;
-    top: 55em;
-    right: 67em;
-    font-size: 10pt;
+#pics figure {
+    position: relative; /* Set figure elements to relative positioning */
 }
 
-#figcap3{
-    position: absolute;
-    top: 55em;
-    right: 45em;
-    font-size: 10pt;
-}
-
-#figcap4{
-    position: absolute;
-    top: 55em;
-    right: 24em;
-    font-size: 10pt;
+#pics figcaption {
+    position: absolute; /* Set figcaption elements to absolute positioning */
+    bottom: 0; /* Adjust positioning as needed */
+    left: 0; /* Adjust positioning as needed */
+    width: 100%; /* Ensure figcaption takes full width of figure element */
+    background-color: rgba(0, 0, 0, 0.7); /* Add background color for better readability */
+    color: white; /* Set text color to white */
+    padding: 10px; /* Add padding for better appearance */
 }
 
 a[href]{

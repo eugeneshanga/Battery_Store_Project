@@ -25,20 +25,20 @@
         <main id="pics">
             <figure>
                 <img id="img1" src="images/batterySet1.jpg" alt="Battery 1" height="300"/>
-                <figcaption id="figcap1">Anker - 3-in-1 Cube with MagSafe - Gray</figcaption>
+                <figcaption>Anker - 3-in-1 Cube with MagSafe - Gray</figcaption>
             </figure>
             <figure>
                 <img id="img3" src="images/batterySet2.jpg" alt="Battery 2" height="300"/>
-                <figcaption id="figcap2">ToughTested - Solar24 24,000 mAh Portable Charger for Most USB-Enabled Devices - Black - Front_ZoomToughTested - Solar24 24,000 mAh Portable Charger for Most USB-Enabled Devices 
+                <figcaption>ToughTested - Solar24 24,000 mAh Portable Charger for Most USB-Enabled Devices - Black - Front_ZoomToughTested - Solar24 24,000 mAh Portable Charger for Most USB-Enabled Devices 
                     - Black</figcaption>
             </figure>
             <figure>
                 <img id="img2" src="images/batterySet3.jpg" alt="Battery 3" height="300"/>
-                <figcaption id="figcap3">Anker - MagGo Magnetic Power Bank with Kickstand (10000mAh, 20W) - Black</figcaption>
+                <figcaption">Anker - MagGo Magnetic Power Bank with Kickstand (10000mAh, 20W) - Black</figcaption>
             </figure>
             <figure>
                 <img id="img4" src="images/batterySet4.jpg" alt="Battery 4" height="300"/>
-                <figcaption id="figcap4">myCharge - Adventure H2O Turbo 10,050 mAh Portable Charger for Most USB Enabled Devices - Gray</figcaption>
+                <figcaption>myCharge - Adventure H2O Turbo 10,050 mAh Portable Charger for Most USB Enabled Devices - Gray</figcaption>
             </figure>
             <span class="stretch"></span>
         </main>

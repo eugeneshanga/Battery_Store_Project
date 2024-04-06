@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 // Get the product data
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 $code = filter_input(INPUT_POST, 'code', FILTER_VALIDATE_INT);
@@ -15,7 +17,7 @@ if ($category_id == NULL || $category_id == FALSE || $code == NULL
 } else {
     require_once('storeDefinition.php');
 
-// Check if jewelry code already exists
+// Check if Battery code already exists
 $query = 'SELECT COUNT(*) FROM batteries WHERE batteryCode = :code';
 $statement = $db->prepare($query);
 $statement->bindValue(':code', $code);
@@ -28,9 +30,9 @@ if ($count > 0) {
 } else {
     
 //  Add the product to the database
-$query = 'INSERT INTO battery
-(batteryCategoryID, batteryCode, batteryName, description, price)
-VALUES (:category_id, :code, :name, :description, :price)';
+$query = 'INSERT INTO batteries
+(batteryCategoryID, batteryCode, batteryName, descript, price, dateCreated)
+VALUES (:category_id, :code, :name, :description, :price, NOW())';
 $statement = $db->prepare($query);
 $statement->bindValue(':category_id', $category_id);
 $statement->bindValue(':code', $code);
@@ -41,6 +43,8 @@ $statement->execute();
 $statement->closeCursor();
 
 // Display the Product List page
-header('Location: productDisplay.php');
+echo "Before Redirect";
+header('Location: productDisplay2.php');
+exit();
 }
 }
