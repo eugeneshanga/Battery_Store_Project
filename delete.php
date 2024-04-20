@@ -6,7 +6,7 @@ $password = 'It202password.com';
 
 
 try {
-    $db = new PDO($dsn, $username, $pa55word);
+    $db = new PDO($dsn, $username, $password);
 } catch(PDOException $exception) {
     $error_message = $exception->getMessage();
     include('database_error.php');
@@ -16,7 +16,7 @@ try {
 
 if (isset($_POST['batteryCode'])) {
     $id = $_POST['batteryCode'];
-    $query = "DELETE FROM battery 
+    $query = "DELETE FROM batteries 
                 WHERE batteryCode = :id";
     $statement = $db->prepare($query);
     $statement->bindValue(':id', $id);
